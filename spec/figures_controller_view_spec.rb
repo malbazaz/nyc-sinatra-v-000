@@ -106,7 +106,7 @@ describe FiguresController do
     @original_figure = Figure.first
     visit "/figures/#{@original_figure.id}/edit"
     #fill_in :figure_name, with: "Missy"
-    fill_in :new_landmark, with: "Big Tower"
+    #fill_in :new_landmark, with: "Big Tower"
     click_button "Edit Figure"
 
     expect(page.current_path).to eq("/figures/#{@original_figure.id}")
