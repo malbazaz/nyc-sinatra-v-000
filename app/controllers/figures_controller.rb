@@ -59,4 +59,4 @@ class FiguresController < ApplicationController
 
 end
 
-if !params
+
