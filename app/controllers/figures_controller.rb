@@ -53,9 +53,8 @@ class FiguresController < ApplicationController
     #@title = Title.find_by_id(@figure.)
     @figure.name = params["figure"]["name"]
     @landmark.name = params["landmark"]["name"]
-
-
     @figure.save
+    @landmark.save
   redirect to "/figures/#{@figure.id}"
 end
 
