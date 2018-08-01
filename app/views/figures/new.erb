@@ -4,21 +4,21 @@
   <label>Figures</label>
   <br></br>
 
-<p>Figure Name: <input type="text" name="figure[name]" id="figure_name"></p>
+<p>Figure Name: <input type="text" id="figure_name" name="figure[name]"></p>
   <br></br>
 
 <p>Select Title: <% Title.all.each do |title| %>
-    <input id="<%= title.id %>" type="checkbox" name="title_<%= title.id %>" value="title_<%= title.id %>"><%=title.name%></input></p>
+    <input id="title_<%= title.id %>" type="checkbox" name="figure[title_ids][]" ><%=title.name%></input></p>
   <% end %>
   <label>And/or, create a new Title with a name :</label>
-    <input  type="text" name="new_title"></input>
+    <input  type="text" name="new_title" ></input>
   <br></br>
 
 <p>Select Landmark: <% Landmark.all.each do |landmark| %>
-      <input id="<%= landmark.id %>" type="checkbox" name="landmark_<%= landmark.id %>" value="landmark_<%= landmark.id %>"><%=landmark.name%></input></p>
+      <input name="figure[landmark_ids][]" type="checkbox" id="landmark_<%= landmark.id %>" ><%=landmark.name%></input></p>
     <% end %>
     <label>And/or, create a new Landmark with a name :</label>
-      <input  type="text" name="landmark[name]"></input>
+      <input  type="text" name="landmark[name]" id="landmark_name"></input>
 
     <input type="submit" value="Create New Figure" name="Create New Figure">
   </form>
