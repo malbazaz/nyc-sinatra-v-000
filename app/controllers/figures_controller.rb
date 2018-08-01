@@ -22,7 +22,7 @@ class FiguresController < ApplicationController
     @figure.titles << @title
     @figure.save
     end
-      binding.pry
+    #  binding.pry
     if !params[:landmark][:name].empty?
     @landmark = Landmark.create(name: params[:landmark][:name], year_completed: params[:landmark][:year_completed], figure_id: @figure.id)
     @figure.landmarks << @landmark
