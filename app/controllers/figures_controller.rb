@@ -50,9 +50,14 @@ class FiguresController < ApplicationController
   post '/figures/:id' do
     binding.pry
     @figure = Figure.find_by_id(params[:id])
+    if !params[:figure][:name].empty?
     @figure.name = params["figure"]["name"]
+    end
+    if !params
     @figure.save
   redirect to "/figures/#{@figure.id}"
   end
 
 end
+
+if !params
