@@ -48,13 +48,13 @@ class FiguresController < ApplicationController
   end
 
   post '/figures/:id' do
-  #
+  #   @figure.save
     @figure = Figure.find_by_id(params[:id])
     #@title = Title.find_by_id(@figure.)
     @figure.name = params["figure"]["name"]
-        binding.pry
+        @figure.save
     @landmark.name = params["landmark"]["name"]
-    @figure.save
+  
     @landmark.save
 
   redirect to "/figures/#{@figure.id}"
