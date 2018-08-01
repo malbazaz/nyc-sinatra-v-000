@@ -12,7 +12,7 @@ class FiguresController < ApplicationController
   post '/figures' do
     #binding.pry
     @figure = Figure.create(name: params[:figure][:name])
-    #binding.pry
+    binding.pry
     if params[:title][:name].empty?
     @figure.title_ids = params[:figure][:title_ids]
     @figure.save
