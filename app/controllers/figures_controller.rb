@@ -12,15 +12,17 @@ class FiguresController < ApplicationController
   post '/figures' do
     #binding.pry
     @figure = Figure.create(name: params[:figure][:name])
-    #binding.pry
+
+
     if params[:title][:name].empty?
     @figure.title_ids = params[:figure][:title_ids]
     @figure.save
-    else
+  elsif !params[:title][:name].empty?
     @title = Title.create(name: params[:title][:name])
-    @figure.title_ids << @title.id
+    @figure.titles << @title
     @figure.save
     end
+    #  binding.pry
     if !params[:landmark][:name].empty?
     @landmark = Landmark.create(name: params[:landmark][:name], year_completed: params[:landmark][:year_completed], figure_id: @figure.id)
     @figure.landmarks << @landmark
@@ -46,9 +48,15 @@ class FiguresController < ApplicationController
   end
 
   post '/figures/:id' do
-    #binding.pry
+  #  binding.pry
     @figure = Figure.find_by_id(params[:id])
+    #@title = Title.find_by_id(@figure.)
+    @figure.name = params["figure"]["name"]
+        @figure.save
+    @landmark.name = params["landmark"]["name"]
+    @landmark.save
+
   redirect to "/figures/#{@figure.id}"
-  end
+end
 
 end
