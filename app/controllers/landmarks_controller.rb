@@ -28,7 +28,7 @@ class LandmarksController < ApplicationController
    #binding.pry
   @landmark = Landmark.find_by_id(params[:id])
   @landmark.name = params[:landmark][:name]
-    @landmark.year_completed = params[:landmark][:year_completed]
+  @landmark.year_completed = params[:landmark][:year_completed]
   @landmark.save
   redirect to "/landmarks/#{@landmark.id}"
   end

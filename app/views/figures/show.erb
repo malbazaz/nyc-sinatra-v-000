@@ -8,6 +8,7 @@
                <% end %></li>
   <li>Landmarks : <% @figure.landmarks.each do |landmark| %>
                <%= landmark.name %>
+               <%= landmark.year_completed %>
                <% end %></li>
   <%end%>
 </ul>
