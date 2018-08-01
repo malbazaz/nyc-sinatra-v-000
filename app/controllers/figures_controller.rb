@@ -54,7 +54,6 @@ class FiguresController < ApplicationController
     @figure.name = params["figure"]["name"]
         @figure.save
     @landmark.name = params["landmark"]["name"]
-
     @landmark.save
 
   redirect to "/figures/#{@figure.id}"
