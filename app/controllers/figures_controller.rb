@@ -48,7 +48,7 @@ class FiguresController < ApplicationController
   end
 
   post '/figures/:id' do
-    #binding.pry
+    binding.pry
     @figure = Figure.find_by_id(params[:id])
   redirect to "/figures/#{@figure.id}"
   end
