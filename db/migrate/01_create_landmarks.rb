@@ -1,3 +1,6 @@
 class CreateLandmarks < ActiveRecord::Migration
-  raise 'Write CreateLandmarks migration here'
-end
+  def change
+
+  end
+
+  end
