@@ -51,8 +51,8 @@ class FiguresController < ApplicationController
   #  binding.pry
     @figure = Figure.find_by_id(params[:id])
     @figure.name = params["figure"]["name"]
-    
-    
+
+
     @figure.save
   redirect to "/figures/#{@figure.id}"
 end
