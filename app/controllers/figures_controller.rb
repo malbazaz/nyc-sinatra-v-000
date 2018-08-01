@@ -10,7 +10,7 @@ erb :'figures/new'
 end
 
 post '/figures' do
-binding.pry
+#binding.pry
 end
 
 

@@ -7,13 +7,18 @@
 <p>Figure Name: <input type="text" name="figure[name]" id="figure_name"></p>
   <br></br>
 
-<p>Select Figure Title: <% Title.all.each do |title| %>
-    <input id="<%= title.id %>" type="checkbox" name="figure[title_id][]" value="<%= title.id %>"><%=title.name%></input></p>
+<p>Select Title: <% Title.all.each do |title| %>
+    <input id="<%= title.id %>" type="checkbox" name="title_<%= title.id %>" value="title_<%= title.id %>"><%=title.name%></input></p>
   <% end %>
-  <label>And/or, create a new Title:</label>
-  <label>Title name:</label>
+  <label>And/or, create a new Title with a name :</label>
     <input  type="text" name="new_title"></input>
   <br></br>
 
-    <input type="submit" value="Create" name="Create New Figure">
+<p>Select Landmark: <% Landmark.all.each do |landmark| %>
+      <input id="<%= landmark.id %>" type="checkbox" name="landmark_<%= landmark.id %>" value="landmark_<%= landmark.id %>"><%=landmark.name%></input></p>
+    <% end %>
+    <label>And/or, create a new Landmark with a name :</label>
+      <input  type="text" name="landmark[name]"></input>
+
+    <input type="submit" value="Create New Figure" name="Create New Figure">
   </form>
