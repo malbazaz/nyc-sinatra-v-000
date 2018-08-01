@@ -12,7 +12,8 @@ class FiguresController < ApplicationController
   post '/figures' do
     #binding.pry
     @figure = Figure.create(name: params[:figure][:name])
-    binding.pry
+
+
     if params[:title][:name].empty?
     @figure.title_ids = params[:figure][:title_ids]
     @figure.save
@@ -21,6 +22,7 @@ class FiguresController < ApplicationController
     @figure.title_ids << @title.id
     @figure.save
     end
+      binding.pry
     if !params[:landmark][:name].empty?
     @landmark = Landmark.create(name: params[:landmark][:name], year_completed: params[:landmark][:year_completed], figure_id: @figure.id)
     @figure.landmarks << @landmark
