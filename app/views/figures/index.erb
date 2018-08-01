@@ -1,0 +1,13 @@
+
+<h4>Figures:</h4>
+<ul>
+  <%Figure.all.each do |figure|%>
+  <li>Name : <a href="/figures/<%=figure.id%>"><%=figure.name%></a> </li>
+  <li>Titles : <% Figure.titles.all.each do |title| %>
+               <%= title.name %>
+               <% end %></li>
+  <li>Landmarks : <% Figure.landmarks.all.each do |landmark| %>
+               <%= landmark.name %>
+               <% end %></li>
+  <%end%>
+</ul>
