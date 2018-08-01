@@ -53,16 +53,7 @@ class FiguresController < ApplicationController
     if !params[:figure][:name].empty?
     @figure.name = params["figure"]["name"]
     end
-    if !params[:figure][:name].empty?
-    @figure.name = params["figure"]["name"]
-    end
-    if !params[:figure][:name].empty?
-    @figure.name = params["figure"]["name"]
-    end
-    if !params[:figure][:name].empty?
-    @figure.name = params["figure"]["name"]
-    end
-    if !params
+
     @figure.save
   redirect to "/figures/#{@figure.id}"
   end
