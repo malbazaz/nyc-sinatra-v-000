@@ -4,5 +4,5 @@
   <%Landmark.all.each do |landmark|%>
   <p><li>Name : <a href="/landmarks/<%=landmark.id%>"><%=landmark.name%></a> </li>
     <li> Year Completed : <%= landmark.year_completed %> </li>
-      <li> Figure : <%= Figure.landmark.name %>
+      <li> Figure : <%= landmark.name %>
     </p> <% end> </ul>
