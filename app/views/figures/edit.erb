@@ -8,7 +8,7 @@
     <input id="title_<%= title.id %>" type="checkbox" name="figure[title_ids][]" value="<%= title.id %>" ><%=title.name%></input></p>
   <% end %>
   <label>And/or, create a new Title with a name :</label>
-    <input  type="text" name="title[name]" id="new_title" value="<%= @title.name %>"></input>
+    <input  type="text" name="title[name]" id="new_title" ></input>
 
 <p>Select Landmark: <% Landmark.all.each do |landmark| %>
       <input name="figure[landmark_ids][]" type="checkbox" id="landmark_<%= landmark.id %>" value ="<%= landmark.id %>"><%=landmark.name%></input></p>
