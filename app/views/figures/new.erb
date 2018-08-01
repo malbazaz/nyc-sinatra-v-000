@@ -3,8 +3,17 @@
 <form action="/figures" method="POST">
   <label>Figures</label>
   <br></br>
+
 <p>Figure Name: <input type="text" name="figure[name]" id="figure_name"></p>
   <br></br>
 
-    <input type="submit" value="Create" name="Create">
+<p>Select Figure Title: <% Title.all.each do |title| %>
+    <input id="<%= title.id %>" type="checkbox" name="figure[title_id][]" value="<%= title.id %>"><%=title.name%></input></p>
+  <% end %>
+  <label>And/or, create a new Title:</label>
+  <label>Title name:</label>
+    <input  type="text" name="new_title"></input>
+  <br></br>
+
+    <input type="submit" value="Create" name="Create New Figure">
   </form>
